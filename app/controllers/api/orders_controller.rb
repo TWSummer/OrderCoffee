@@ -16,6 +16,7 @@ class Api::OrdersController < ApplicationController
     sort = params[:sort]
     sort ||= "ASC"
     @orders = Order.order("? ?", sort_col, sort).limit(25).offset("?", page)
+    render :index
   end
 
   private

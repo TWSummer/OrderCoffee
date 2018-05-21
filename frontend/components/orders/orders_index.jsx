@@ -18,6 +18,7 @@ class OrdersIndex extends React.Component {
     console.log(this.props);
     return (
       <section>
+        <img src="https://i.imgur.com/EJMbREK.png" alt="logo"></img>
         Hello Theo
       </section>
     );

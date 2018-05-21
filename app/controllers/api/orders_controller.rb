@@ -9,13 +9,17 @@ class Api::OrdersController < ApplicationController
   end
 
   def index
-    page = params[:page]
+    page = params[:page].to_i
     page ||= 1
     sort_col = params[:sort_col]
     sort_col ||= "ship_date"
     sort = params[:sort]
     sort ||= "ASC"
-    @orders = Order.order("? ?", sort_col, sort).limit(25).offset("?", page)
+    p sort_col
+    p sort
+    p page
+    @orders = Order.order("#{sort_col} #{sort}")
+      .limit(25).offset(25 * (page - 1))
     render :index
   end
 

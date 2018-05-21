@@ -1,12 +1,12 @@
 class CreateOrders < ActiveRecord::Migration[5.2]
   def change
     create_table :orders do |t|
-      t.string :coffee_name
-      t.string :method
-      t.integer :quantity
-      t.integer :unit
-      t.boolean :priority
-      t.date :ship_date
+      t.string :coffee_name, null: false
+      t.string :method, null: false
+      t.integer :quantity, null: false
+      t.integer :unit, null: false
+      t.boolean :priority, null: false
+      t.date :ship_date, null: false
       t.string :notes
       t.timestamps
     end

@@ -38,7 +38,7 @@ class OrderItem extends React.Component {
           {this.addStar(order)}
         </div>
         <div className="order">{this.formatOrder(order.id)}</div>
-        <div className="view">f</div>
+        <div className="view"><i class="fas fa-eye"></i></div>
       </span>
     );
   }

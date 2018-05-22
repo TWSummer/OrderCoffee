@@ -100,6 +100,10 @@ span, div, img {
   font-weight: 700;
   align-items: center;
   justify-content: space-between;
+
+  .cof, .met, .ship, .qua, .unit, .order {
+    cursor: pointer;
+  }
 }
 
 .cof {
@@ -142,4 +146,13 @@ span, div, img {
   margin-left: 10px;
   color: #888;
   font-size: 9px;
+}
+
+.fa-eye {
+  color: $blue;
+}
+
+.fa-sort-amount-up, .fa-sort-amount-down {
+  margin-left: 10px;
+  color: #888;
 }

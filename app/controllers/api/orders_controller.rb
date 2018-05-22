@@ -15,9 +15,6 @@ class Api::OrdersController < ApplicationController
     sort_col ||= "ship_date"
     sort = params[:sort]
     sort ||= "ASC"
-    p sort_col
-    p sort
-    p page
     @orders = Order.order("#{sort_col} #{sort}")
       .limit(25).offset(25 * (page - 1))
     render :index

@@ -18,6 +18,13 @@ class OrderItem extends React.Component {
     return "#" + num;
   }
 
+  addStar(order) {
+    if (order.priority) {
+      return <i class="fas fa-star"></i>;
+    }
+    return "";
+  }
+
   render() {
     let { order } = this.props;
     return (
@@ -26,7 +33,10 @@ class OrderItem extends React.Component {
         <div className="met">{order.method}</div>
         <div className="qua">{order.quantity}</div>
         <div className="unit">{order.unit}</div>
-        <div className="ship">{this.formatDate(order.ship_date)}</div>
+        <div className="ship">
+          {this.formatDate(order.ship_date)}
+          {this.addStar(order)}
+        </div>
         <div className="order">{this.formatOrder(order.id)}</div>
         <div className="view">f</div>
       </span>

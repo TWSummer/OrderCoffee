@@ -17,7 +17,7 @@ class OrdersIndex extends React.Component {
 
   getMonth() {
     let now = new Date(Date.now());
-    return now.toDateString().split(" ")[1];
+    return now.toDateString().split(" ")[1].toUpperCase();
   }
 
   getDay() {
@@ -36,11 +36,11 @@ class OrdersIndex extends React.Component {
             <span className="day">{this.getDay()}</span>
           </div>
           <h1>Perfectly Ground Work Orders</h1>
-          <button>Create Order</button>
+          <button>CREATE ORDER</button>
         </header>
         <main className="orders-table">
           <header className="table-header">
-            <span className="blue-header">Orders</span>
+            <span className="blue-header">ORDERS</span>
             <span className="column-labels">
               <div>Coffee</div>
               <div>Method</div>

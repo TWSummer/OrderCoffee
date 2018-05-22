@@ -4,7 +4,10 @@
 
 $blue: #01a1dd;
 $dark_gray: #555;
+$gray: #DDD;
 $light_gray: #f3f3f3;
+
+$row_height: 40px;
 
 body {
   font-family: "Avenir Next", Avenir, Roboto, "Century Gothic",
@@ -21,6 +24,7 @@ span, div, img {
 .page-header {
   display: flex;
   align-items: center;
+  margin-bottom: 25px;
 
   h1 {
     margin-left: 2.5vw;
@@ -29,8 +33,18 @@ span, div, img {
   }
 
   button {
+    font-size: 10px;
     margin-left: auto;
     background-color: $blue;
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    letter-spacing: 1px;
+  }
+
+  button:hover {
+    opacity: 0.8;
+    cursor: pointer;
   }
 
   @media screen and (min-width: 775px) {
@@ -55,4 +69,26 @@ span, div, img {
 
 .day {
   font-size: 36px;
+}
+
+
+.orders-table {
+  border: 2px solid $gray;
+}
+
+.table-header {
+  border-bottom: 2px solid $blue
+}
+
+.blue-header {
+  width: 90%;
+  color: $blue;
+  margin: 0 auto;
+  height: $row_height;
+  border-bottom: 1px solid #AAA;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 10px;
+  padding-top: calc((40px - 10px) / 2);
+  box-sizing: border-box;
 }

@@ -12,11 +12,11 @@ units = [25, 50]
 priorities = [true, false]
 
 
-50.times do |i|
+505.times do
   Order.create(coffee_name: coffee_names.sample,
                method: methods.sample,
-               quantity: 10,
+               quantity: (1..20).to_a.sample,
                unit: units.sample,
-               ship_date: Date.today - i.days,
+               ship_date: Date.today - (0..50).to_a.sample.days,
                priority: priorities.sample)
 end

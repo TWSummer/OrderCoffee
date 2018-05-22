@@ -2,12 +2,57 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$blue: #01a1dd;
+$dark_gray: #555;
+$light_gray: #f3f3f3;
+
 body {
   font-family: "Avenir Next", Avenir, Roboto, "Century Gothic",
   "Franklin Gothic Medium", "Helvetica Neue", Helvetica, Arial,
   sans-serif;
+  color: $dark_gray;
+  margin: 0 5%;
 }
 
-span, div {
+span, div, img {
   display: block;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+
+  h1 {
+    margin-left: 2.5vw;
+    font-size: 20px;
+    font-weight: 300;
+  }
+
+  button {
+    margin-left: auto;
+    background-color: $blue;
+  }
+
+  @media screen and (min-width: 775px) {
+    h1 {
+      font-size: 36px
+    }
+  }
+}
+
+.today-date {
+  font-weight: 700;
+  width: 60px;
+  height: 60px;
+  background-color: $light_gray;
+  text-align: center;
+}
+
+.month {
+  font-size: 18px;
+  padding-top: 3px;
+}
+
+.day {
+  font-size: 36px;
 }

@@ -30,7 +30,7 @@ class OrdersIndex extends React.Component {
     return (
       <section>
         <img src="https://i.imgur.com/EJMbREK.png" alt="logo"></img>
-        <header>
+        <header className="page-header">
           <div className="today-date">
             <span className="month">{this.getMonth()}</span>
             <span className="day">{this.getDay()}</span>

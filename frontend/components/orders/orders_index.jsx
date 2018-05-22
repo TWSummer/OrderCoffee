@@ -1,5 +1,6 @@
 import React from 'react';
 import OrderItem from './order_item';
+import CreateOrderModal from './create_order_modal';
 
 class OrdersIndex extends React.Component {
   constructor(props) {
@@ -7,10 +8,12 @@ class OrdersIndex extends React.Component {
     this.state = {
       page: 1,
       sortType: "ship_date",
-      sort: "DESC"
+      sort: "DESC",
+      modal: false
     };
     this.setSort = this.setSort.bind(this);
     this.setPage = this.setPage.bind(this);
+    this.setModal = this.setModal.bind(this);
   }
 
   componentDidMount() {
@@ -94,6 +97,12 @@ class OrdersIndex extends React.Component {
     };
   }
 
+  setModal(bool) {
+    return (e) => {
+      this.setState({ modal: bool });
+    };
+  }
+
   render() {
     return (
       <section>
@@ -104,7 +113,7 @@ class OrdersIndex extends React.Component {
             <span className="day">{this.getDay()}</span>
           </div>
           <h1>Perfectly Ground Work Orders</h1>
-          <button>CREATE ORDER</button>
+          <button onClick={this.setModal(true)}>CREATE ORDER</button>
         </header>
         <main className="orders-table">
           <header className="table-header">
@@ -184,6 +193,13 @@ class OrdersIndex extends React.Component {
             <i class="fas fa-angle-double-right"></i>
           </div>
         </footer>
+        {
+          this.state.modal ?
+          <CreateOrderModal
+            closeModal={this.setModal(false)}>
+          </CreateOrderModal> :
+          ""
+        }
       </section>
     );
   }

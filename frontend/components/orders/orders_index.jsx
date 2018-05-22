@@ -54,6 +54,28 @@ class OrdersIndex extends React.Component {
     };
   }
 
+  pageNumbers() {
+    let min = this.state.page - 2;
+    let max = this.state.page + 2;
+    let pageLimit = (this.props.count - 1) / 25 + 1;
+    if (min < 1) {
+      max = max + 1 - min;
+      min = 1;
+    }
+    if (max > pageLimit) {
+      min = min - max + pageLimit;
+      max = pageLimit;
+    }
+    if (min < 1) {
+      min = 1;
+    }
+    let pageNums = [];
+    for (let i = min; i <= max; i++) {
+      pageNums.push(i);
+    }
+    return pageNums;
+  }
+
   render() {
     return (
       <section>
@@ -123,7 +145,13 @@ class OrdersIndex extends React.Component {
             Prev
           </div>
           {
-            
+            this.pageNumbers().map((num) => {
+              return (
+                <div className="page-select">
+                  {num}
+                </div>
+              );
+            })
           }
           <div className="page-select">
             Next

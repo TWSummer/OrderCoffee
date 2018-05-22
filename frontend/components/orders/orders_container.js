@@ -6,6 +6,7 @@ const mapStateToProps = (state, ownProps) => {
   console.log(state);
   return ({
     orders: state.orders.orders,
+    count: state.orders.count,
     errors: state.errors
   });
 };

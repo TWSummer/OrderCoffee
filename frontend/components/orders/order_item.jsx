@@ -5,17 +5,30 @@ class OrderItem extends React.Component {
     super(props);
   }
 
+  formatDate(date) {
+    let dateParts = date.split("-");
+    return dateParts[1] + "/" + dateParts[2] + "/" + dateParts[0];
+  }
+
+  formatOrder(num) {
+    num = num.toString();
+    while (num.length < 5) {
+      num = "0" + num;
+    }
+    return "#" + num;
+  }
+
   render() {
     let { order } = this.props;
     return (
-      <span>
-        <div>{order.coffee_name}</div>
-        <div>{order.method}</div>
-        <div>{order.quantity}</div>
-        <div>{order.unit}</div>
-        <div>{order.ship_date}</div>
-        <div>{order.id}</div>
-        <div></div>
+      <span className="table-row">
+        <div className="cof">{order.coffee_name}</div>
+        <div className="met">{order.method}</div>
+        <div className="qua">{order.quantity}</div>
+        <div className="unit">{order.unit}</div>
+        <div className="ship">{this.formatDate(order.ship_date)}</div>
+        <div className="order">{this.formatOrder(order.id)}</div>
+        <div className="view">f</div>
       </span>
     );
   }

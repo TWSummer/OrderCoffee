@@ -42,13 +42,13 @@ class OrdersIndex extends React.Component {
           <header className="table-header">
             <span className="blue-header">ORDERS</span>
             <span className="column-labels">
-              <div>Coffee</div>
-              <div>Method</div>
-              <div>Quantity</div>
-              <div>Unit</div>
-              <div>Ship Date</div>
-              <div>Order</div>
-              <div>View</div>
+              <div className="cof">Coffee</div>
+              <div className="met">Method</div>
+              <div className="qua">Quantity</div>
+              <div className="unit">Unit</div>
+              <div className="ship">Ship Date</div>
+              <div className="order">Order</div>
+              <div className="view">View</div>
             </span>
           </header>
           <div>

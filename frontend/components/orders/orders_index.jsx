@@ -55,7 +55,7 @@ class OrdersIndex extends React.Component {
             {
               this.props.orders.map((order) => {
                 return (
-                  <OrderItem></OrderItem>
+                  <OrderItem order={order}></OrderItem>
                 );
               })
             }

@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { fetchOrders, createOrder } from '../../actions/order_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state);
   return ({
     orders: state.orders.orders,
     count: state.orders.count,

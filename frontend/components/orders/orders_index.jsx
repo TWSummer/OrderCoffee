@@ -10,6 +10,7 @@ class OrdersIndex extends React.Component {
       sort: "DESC"
     };
     this.setSort = this.setSort.bind(this);
+    this.setPage = this.setPage.bind(this);
   }
 
   componentDidMount() {
@@ -54,10 +55,14 @@ class OrdersIndex extends React.Component {
     };
   }
 
+  maxPage() {
+    return Math.floor((this.props.count - 1) / 25 + 1);
+  }
+
   pageNumbers() {
     let min = this.state.page - 2;
     let max = this.state.page + 2;
-    let pageLimit = (this.props.count - 1) / 25 + 1;
+    let pageLimit = this.maxPage();
     if (min < 1) {
       max = max + 1 - min;
       min = 1;
@@ -76,7 +81,21 @@ class OrdersIndex extends React.Component {
     return pageNums;
   }
 
+  setPage(num) {
+    if (num < 1) {
+      num = 1;
+    }
+    if (num > this.maxPage()) {
+      num = this.maxPage();
+    }
+    return (e) => {
+      this.props.fetchOrders(num, this.state.sortType, this.state.sort);
+      this.setState({ page: num });
+    };
+  }
+
   render() {
+    console.log(this.state.page);
     return (
       <section>
         <img src="https://i.imgur.com/EJMbREK.png" alt="logo"></img>
@@ -138,25 +157,31 @@ class OrdersIndex extends React.Component {
           </div>
         </main>
         <footer className="page-numbers">
-          <div className="page-select">
+          <div className="page-select"
+            onClick={this.setPage(1)}>
             <i class="fas fa-angle-double-left"></i>
           </div>
-          <div className="page-select">
+          <div className="page-select"
+            onClick={this.setPage(this.state.page - 1)}>
             Prev
           </div>
           {
             this.pageNumbers().map((num) => {
+              let active = this.state.page === num ? "active" : "";
               return (
-                <div className="page-select">
+                <div className={`page-select ${active}`}
+                  onClick={this.setPage(num)}>
                   {num}
                 </div>
               );
             })
           }
-          <div className="page-select">
+          <div className="page-select"
+            onClick={this.setPage(this.state.page + 1)}>
             Next
           </div>
-          <div className="page-select">
+          <div className="page-select final-select"
+            onClick={this.setPage(this.maxPage())}>
             <i class="fas fa-angle-double-right"></i>
           </div>
         </footer>

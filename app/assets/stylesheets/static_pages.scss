@@ -162,3 +162,21 @@ span, div, img {
   justify-content: center;
   margin: 25px 0;
 }
+
+.page-select {
+  font-size: 14px;
+  padding: 10px 15px;
+  color: $blue;
+  border: 2px solid $gray;
+  border-right: none;
+  cursor: pointer;
+}
+
+.final-select {
+  border: 2px solid $gray;
+}
+
+.active {
+  background-color: $blue;
+  color: #fff;
+}

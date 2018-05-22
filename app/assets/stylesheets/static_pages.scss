@@ -64,7 +64,7 @@ span, div, img {
 
 .month {
   font-size: 18px;
-  padding-top: 3px;
+  padding-top: 6px;
 }
 
 .day {
@@ -155,4 +155,10 @@ span, div, img {
 .fa-sort-amount-up, .fa-sort-amount-down {
   margin-left: 10px;
   color: #888;
+}
+
+.page-numbers {
+  display: flex;
+  justify-content: center;
+  margin: 25px 0;
 }

@@ -115,6 +115,23 @@ class OrdersIndex extends React.Component {
             }
           </div>
         </main>
+        <footer className="page-numbers">
+          <div className="page-select">
+            <i class="fas fa-angle-double-left"></i>
+          </div>
+          <div className="page-select">
+            Prev
+          </div>
+          {
+            
+          }
+          <div className="page-select">
+            Next
+          </div>
+          <div className="page-select">
+            <i class="fas fa-angle-double-right"></i>
+          </div>
+        </footer>
       </section>
     );
   }

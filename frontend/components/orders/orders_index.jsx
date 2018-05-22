@@ -95,7 +95,6 @@ class OrdersIndex extends React.Component {
   }
 
   render() {
-    console.log(this.state.page);
     return (
       <section>
         <img src="https://i.imgur.com/EJMbREK.png" alt="logo"></img>

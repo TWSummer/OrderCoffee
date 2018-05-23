@@ -4,7 +4,7 @@ OrderCoffee is a single page app built on a Ruby on Rails backend, with a Postgr
 
 `rails db:setup`
 
-This will create the database, and seed it with a little over 500 "orders" that can be viewed. Next, run `webpack` to bundle up the project's JavaScript files and `rails s` to start the server. Now you can navigate to localhost:3000 in your browser to view the project.
+This will create the database, and seed it with a little over 500 "orders" that can be viewed. Next, run `npm install` to download the project's node modules. Once this is completed run `webpack` in the console to bundle up the project's JavaScript files and finally `rails s` to start the server. Now you can navigate to localhost:3000 in your browser to view the project.
 
 ## Trade Offs
 

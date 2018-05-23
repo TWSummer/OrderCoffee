@@ -16,6 +16,7 @@ class CreateOrderModal extends React.Component {
     this.updateUnit = this.updateUnit.bind(this);
     this.updateNotes = this.updateNotes.bind(this);
     this.updatePriority = this.updatePriority.bind(this);
+    this.submitOrder = this.submitOrder.bind(this);
   }
 
   updateName(e) {
@@ -43,11 +44,15 @@ class CreateOrderModal extends React.Component {
   }
 
   updatePriority(e) {
-    this.setState({ priority: e.target.value });
+    this.setState({ priority: e.target.checked });
   }
 
   submitOrder(e) {
-    
+    this.props.createOrder(this.state).then(
+      () => this.props.closeModal()
+    ).then(
+      () => this.props.fetchOrders()
+    );
   }
 
   render() {
@@ -124,6 +129,7 @@ class CreateOrderModal extends React.Component {
           <label for="priority-check">Priority</label>
           <br></br>
           <button onClick={this.submitOrder}>SUBMIT WORK ORDER</button>
+          {this.props.errors[0]}
         </main>
       </div>
     );

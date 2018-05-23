@@ -14,9 +14,14 @@ class OrdersIndex extends React.Component {
     this.setSort = this.setSort.bind(this);
     this.setPage = this.setPage.bind(this);
     this.setModal = this.setModal.bind(this);
+    this.fetchOrders = this.fetchOrders.bind(this);
   }
 
   componentDidMount() {
+    this.fetchOrders();
+  }
+
+  fetchOrders() {
     this.props.fetchOrders(this.state.page, this.state.sortType, this.state.sort);
   }
 
@@ -196,7 +201,10 @@ class OrdersIndex extends React.Component {
         {
           this.state.modal ?
           <CreateOrderModal
-            closeModal={this.setModal(false)}>
+            closeModal={this.setModal(false)}
+            createOrder={this.props.createOrder}
+            errors={this.props.errors}
+            fetchOrders={this.fetchOrders}>
           </CreateOrderModal> :
           ""
         }

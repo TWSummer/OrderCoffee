@@ -1,24 +1,7 @@
-# README
+##Architecture
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+OrderCoffee is a single page app built on a Ruby on Rails backend, with a PostgreSQL database, and a React/Redux frontend. To get started with the project navigate to the project directory in the console and run:
 
-Things you may want to cover:
+`rails db:setup`
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This will create the database, and seed it with a little over 500 "orders" that can be viewed. Next, run `rails s` to start the server. Now you can navigate to localhost:3000 in your browser to view the project.

@@ -8,7 +8,7 @@ This will create the database, and seed it with a little over 500 "orders" that 
 
 ## Trade Offs
 
-A choice was made to keep the database limited to a single table. This comes with a cost to the amount of memory required to keep track of the information within. Since there are a limited number of coffee_names and methods that are used to brew, these strings could be stored in a separate table, and only an index to reference them could be stored with each order. However, it was chosen not to normalize the database in this way since the memory cost is minimal (only substantial when many billions of orders are being stored), whereas the time/calculation savings of keeping the database denormalized in this way are substantial.
+A choice was made to keep the database limited to a single table. This comes with a cost to the amount of memory required to keep track of the information within. Since there are a limited number of coffee_names and methods that are used to brew, these strings could be stored in a separate table, and an index to reference their location in the other table could be stored with each order. However, it was chosen not to normalize the database in this way since the memory benefits are minimal (only substantial when many billions of orders are being stored), whereas the time/calculation savings of keeping the database denormalized in this way are substantial.
 
 ## Production Readiness
 

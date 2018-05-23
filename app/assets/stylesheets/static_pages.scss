@@ -36,26 +36,26 @@ span, div, img {
     font-weight: 300;
   }
 
-  button {
-    font-size: 10px;
-    margin-left: auto;
-    background-color: $blue;
-    border: none;
-    color: #fff;
-    padding: 10px 15px;
-    letter-spacing: 1px;
-  }
-
-  button:hover {
-    opacity: 0.8;
-    cursor: pointer;
-  }
-
   @media screen and (min-width: 775px) {
     h1 {
       font-size: 36px
     }
   }
+}
+
+button {
+  font-size: 10px;
+  margin-left: auto;
+  background-color: $blue;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 .today-date {
@@ -191,6 +191,89 @@ span, div, img {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #000;
-  opacity: 0.5;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+}
+
+.modal-main {
+  background-color: #fff;
+  border: 1px solid #000;
+  margin-top: 50vh;
+  transform: translateY(-50%);
+  width: 700px;
+  height: 450px;
+  padding: 15px;
+
+  h1 {
+    font-size: 24px;
+    margin: 15px 25px;
+  }
+
+  h3 {
+    font-size: 14px;
+    margin: 15px 25px;
+    line-height: 20px;
+  }
+}
+
+.fa-times {
+  float: right;
+}
+
+.fa-times:hover {
+  cursor: pointer;
+  color: $blue;
+}
+
+.input-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.name-select, .method-select, .date-input {
+  width: 45%;
+}
+
+.quantity-input, .unit-select {
+  width: 22.5%;
+}
+
+.notes-input {
+  width: 100%;
+}
+
+select, input {
+  margin-top: 6px;
+  background-color: inherit;
+  padding: 8px;
+  border: 1px solid $gray;
+  width: 100%;
+}
+
+.notes {
+  width: calc(100% - 18px);
+}
+
+input {
+  height: 17px;
+}
+
+p {
+  display: inline;
+}
+
+#priority-check {
+  width: auto;
+  padding: 0;
+  margin: 0;
+  height: auto;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.red {
+  color: #f00;
 }
